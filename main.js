@@ -197,7 +197,10 @@ const humanizeNumber = function (number) {
   ) {
     return stringNumber + "st";
   }
-  if (stringNumber[stringNumber.length - 1] === "2") {
+  if (
+    stringNumber[stringNumber.length - 1] === "2" &&
+    stringNumber[stringNumber.length - 2] !== "1"
+  ) {
     return stringNumber + "nd";
   }
   if (
@@ -220,3 +223,4 @@ console.log(humanizeNumber(121));
 console.log(humanizeNumber(211));
 console.log(humanizeNumber(53));
 console.log(humanizeNumber(13));
+console.log(humanizeNumber(12));
